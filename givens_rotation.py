@@ -1,7 +1,6 @@
 import numpy as np
 import math
 
-
 def givens_rotation_col_major(mat):
     (rows, cols) = mat.shape
     for row_up in range(0, rows):
@@ -50,8 +49,9 @@ def givens_rotation_row_major(mat):
 
 if __name__=="__main__":
     np.set_printoptions(precision=3)
-    mat_input = np.random.rand(4, 5)
-    (rows, cols) = mat_input.shape
+    mat_input = np.random.rand(5, 4)
+    # (rows, cols) = mat_input.shape
+    print("original matrix: \n", mat_input)
     mat_givens_rotation = givens_rotation_col_major(mat_input)
     print("matrix after col major givens rotation: \n", mat_givens_rotation)
     mat_givens_rotation = givens_rotation_row_major(mat_input)
